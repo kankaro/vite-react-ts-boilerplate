@@ -8,6 +8,10 @@
         "npm": ">=10.2.4",
         "node": ">=20.11.0"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kankaro/vite-react-ts-boilerplate"
+    },
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
