@@ -1,6 +1,10 @@
 {
-  "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix", "eslint"],
+  "*.{js,jsx,ts,tsx}": [
+    "prettier --write",
+    "eslint --fix",
+    "eslint",
+    "vitest --run"
+  ],
   "*.css": ["prettier --write", "stylelint \"**/*.css\""],
-  "*.{json,md}": ["prettier --write"],
-  "*.{test,spec}.{js,jsx,ts,tsx}": ["vitest --run"]
+  "*.{json,md}": ["prettier --write"]
 }
