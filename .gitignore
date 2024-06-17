@@ -12,9 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Tests
+coverage/*
+html/*
+
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
