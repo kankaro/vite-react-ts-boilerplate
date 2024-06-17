@@ -1,26 +1,24 @@
-import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import './App.css';
-import './index.css';
+import './styles/Welcome.css';
+import './styles/index.css';
 
 import reactLogo from '@assets/react.svg';
 import typescriptLogo from '@assets/typescript.svg';
 import viteLogo from '/vite.svg';
 
-export function App() {
-  const [count, setCount] = useState(0);
+import { useCounter } from './hooks/useCounter';
+import { useStateSelectors } from './hooks/useStateSelectors';
+
+export function Welcome() {
+  const { counterValue } = useStateSelectors();
+  const { incrementCounter, decrementCounter } = useCounter();
 
   return (
     <>
-      <Helmet
-        titleTemplate="%s - Vite React Typescript boilerplate"
-        defaultTitle="Vite React Typescript boilerplate"
-      >
-        <meta
-          name="description"
-          content="A starter kit for developing web application using Vite + React + Typescript."
-        />
+      <Helmet>
+        <title>Welcome</title>
+        <meta name="description" content="Default component" />
       </Helmet>
 
       <div className="font-sans">
@@ -45,9 +43,19 @@ export function App() {
         </div>
         <h1>Vite + React + Typescript</h1>
         <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
+          <div className="flex flex-row items-center justify-center space-x-3">
+            <button
+              type="button"
+              disabled={counterValue === 0}
+              onClick={decrementCounter(counterValue)}
+            >
+              -
+            </button>
+            <p>count is {counterValue}</p>
+            <button type="button" onClick={incrementCounter(counterValue)}>
+              +
+            </button>
+          </div>
           <p className="mt-4">
             Edit <code>src/App.tsx</code> and save to test HMR
           </p>
@@ -60,4 +68,4 @@ export function App() {
   );
 }
 
-export default App;
+export default Welcome;
