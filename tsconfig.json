@@ -22,17 +22,18 @@
         "noFallthroughCasesInSwitch": true,
 
         /* Absolute import */
-        "baseUrl": "./src",
+        "baseUrl": "./",
         "paths": {
             "@/*": ["src/*"],
-            "@assets": ["src/assets/*"],
-            "@components": ["src/components/*"],
-            "@hooks": ["src/hooks/*"],
-            "@pages": ["src/pages/*"],
-            "@styles": ["src/styles/*"],
-            "@utils": ["src/utils/*"]
+            "@assets/*": ["src/assets/*"],
+            "@components/*": ["src/components/*"],
+            "@hooks/*": ["src/hooks/*"],
+            "@pages/*": ["src/pages/*"],
+            "@store/*": ["src/store/*"],
+            "@styles/*": ["src/styles/*"],
+            "@utils/*": ["src/utils/*"]
         }
     },
-    "include": ["src", "commitlint.config.ts"],
+    "include": ["src"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
