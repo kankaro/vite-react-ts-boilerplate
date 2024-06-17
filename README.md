@@ -31,8 +31,8 @@ export default {
 
 ## Testing
 
-If you want to run a unit testing before committing the file to the repository add this line of code into the `.lintstagedrc` file.
+Use this command to run a unit test.
 
 ```js
-"*.{test,spec}.{js,jsx,ts,tsx}": ["vitest --run"]
+npm test
 ```
