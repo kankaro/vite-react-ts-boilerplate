@@ -20,7 +20,11 @@
         "css:lint": "stylelint \"**/*.css\"",
         "css:lint-fix": "stylelint \"**/*.css\" --fix",
         "preview": "vite preview",
-        "test": "vitest",
+        "test": "vitest --run",
+        "test:watch": "vitest",
+        "test:ui": "vitest --ui",
+        "test:coverage": "npx vitest run --coverage",
+        "test:report:preview": " npx vite preview --outDir ./html",
         "prepare": "husky"
     },
     "dependencies": {
@@ -42,6 +46,8 @@
         "@typescript-eslint/eslint-plugin": "^7.2.0",
         "@typescript-eslint/parser": "^7.2.0",
         "@vitejs/plugin-react": "^4.2.1",
+        "@vitest/coverage-v8": "1.6.0",
+        "@vitest/ui": "1.6.0",
         "autoprefixer": "10.4.19",
         "clsx": "2.1.1",
         "eslint": "^8.57.0",
