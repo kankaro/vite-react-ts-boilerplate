@@ -19,7 +19,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json',],
+    project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
   plugins: ['react-refresh', 'prettier'],
@@ -29,6 +29,16 @@ module.exports = {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
+    ],
+    'no-restricted-imports': 'off',
+    '@typescript-eslint/no-restricted-imports': [
+      'warn',
+      {
+        name: 'react-redux',
+        importNames: ['useSelector', 'useDispatch'],
+        message:
+          'Use typed hooks `useAppDispatch` and `useAppSelector` instead.',
+      },
     ],
   },
 };
