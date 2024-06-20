@@ -3,8 +3,14 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
 // Here, we bring Jest's DOM matchers into Vite, making testing feel more familiar and easier for users familiar with Jest.
 import * as matchers from '@testing-library/jest-dom/matchers';
-import { expect } from 'vitest';
+import { cleanup } from '@testing-library/react';
+import { afterEach } from 'vitest';
 
 expect.extend(matchers);
+
+afterEach(() => {
+  cleanup();
+});
