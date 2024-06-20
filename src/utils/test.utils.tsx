@@ -1,18 +1,14 @@
-import type { RenderOptions } from '@testing-library/react';
-import {
-  cleanup,
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import React, { PropsWithChildren } from 'react';
+
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+
+import type { RenderOptions } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import type { AppStore, RootState } from '@/store';
-import { setupStore } from '@/store';
+import { createStore } from '@/store';
 
 // This type interface extends the default options for render from RTL, as well
 // as allows the user to specify other things such as initialState, store.
@@ -28,13 +24,15 @@ export function renderWithProviders(
   const {
     preloadedState = {},
     // Automatically create a store instance if no store was passed in
-    store = setupStore(preloadedState),
+    store = createStore(preloadedState),
     ...renderOptions
   } = extendedRenderOptions;
 
   const Wrapper = ({ children }: PropsWithChildren) => (
     <Provider store={store}>
-      <HelmetProvider>{children}</HelmetProvider>
+      <BrowserRouter>
+        <HelmetProvider>{children}</HelmetProvider>
+      </BrowserRouter>
     </Provider>
   );
 
@@ -45,12 +43,8 @@ export function renderWithProviders(
   };
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
+export * from '@testing-library/react';
+
 // override render method
-export {
-  cleanup,
-  fireEvent,
-  renderWithProviders as render,
-  screen,
-  userEvent,
-  waitFor,
-};
+export { renderWithProviders as render };
