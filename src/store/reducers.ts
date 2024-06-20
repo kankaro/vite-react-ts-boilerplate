@@ -7,8 +7,6 @@ import { combineReducers } from '@reduxjs/toolkit';
 import counterReducer from '@pages/Welcome/slice/counterSlice';
 
 // Create the root reducer independently to obtain the RootState type
-export function rootReducer() {
-  return combineReducers({
-    counter: counterReducer,
-  });
-}
+export const rootReducer = combineReducers({
+  counter: counterReducer,
+});
