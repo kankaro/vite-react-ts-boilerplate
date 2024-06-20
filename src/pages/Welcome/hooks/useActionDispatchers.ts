@@ -5,15 +5,12 @@ import { counterActions } from '@pages/Welcome/slice/counterSlice';
 export function useActionDispatchers() {
   const dispatch = useAppDispatch();
 
-  function dispatchSetCounterIncrement(value: number) {
-    dispatch(counterActions.increment(value));
+  function dispatchSetCounterIncrement() {
+    dispatch(counterActions.increment());
   }
 
-  function dispatchSetCounterDecrement(value: number) {
-    if (value < 0) {
-      return;
-    }
-    dispatch(counterActions.increment(value));
+  function dispatchSetCounterDecrement() {
+    dispatch(counterActions.decrement());
   }
 
   return Object.freeze({

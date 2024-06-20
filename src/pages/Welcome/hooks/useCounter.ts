@@ -7,22 +7,20 @@ export function useCounter() {
     useActionDispatchers();
 
   const incrementCounter = useCallback(
-    (value: number) =>
-      (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        event.preventDefault();
-        event.stopPropagation();
-        dispatchSetCounterIncrement(value + 1);
-      },
+    (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      event.preventDefault();
+      event.stopPropagation();
+      dispatchSetCounterIncrement();
+    },
     [],
   );
 
   const decrementCounter = useCallback(
-    (value: number) =>
-      (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        event.preventDefault();
-        event.stopPropagation();
-        dispatchSetCounterDecrement(value - 1);
-      },
+    (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      event.preventDefault();
+      event.stopPropagation();
+      dispatchSetCounterDecrement();
+    },
     [],
   );
 

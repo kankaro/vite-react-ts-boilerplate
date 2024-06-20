@@ -47,12 +47,12 @@ export function Welcome() {
             <button
               type="button"
               disabled={counterValue === 0}
-              onClick={decrementCounter(counterValue)}
+              onClick={decrementCounter}
             >
               -
             </button>
             <p>count is {counterValue}</p>
-            <button type="button" onClick={incrementCounter(counterValue)}>
+            <button type="button" onClick={incrementCounter}>
               +
             </button>
           </div>
@@ -61,7 +61,7 @@ export function Welcome() {
           </p>
         </div>
         <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
+          Click on the Vite, React and Typescript logos to learn more
         </p>
       </div>
     </>
