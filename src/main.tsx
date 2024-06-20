@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 import '@styles/font.css';
 import '@styles/main.css';
@@ -15,11 +16,13 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <Provider store={store}>
-    <HelmetProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </HelmetProvider>
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>,
 );

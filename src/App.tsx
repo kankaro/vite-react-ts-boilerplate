@@ -1,11 +1,12 @@
 import { Helmet } from 'react-helmet-async';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
+import { NotFoundPage } from '@pages/NotFoundPage/Loadable';
 import { Welcome } from '@pages/Welcome/Loadable';
 
 export function App() {
   return (
-    <Router>
+    <>
       <Helmet
         titleTemplate="%s - Vite React Typescript boilerplate"
         defaultTitle="Vite React Typescript boilerplate"
@@ -18,8 +19,8 @@ export function App() {
 
       <Routes>
         <Route path="/" element={<Welcome />} />
-        {/* <Route path="*" element={<NotFoundPage />} /> */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </Router>
+    </>
   );
 }
