@@ -1,6 +1,6 @@
 # React TypeScript boilerplate in Vite
 
-A starter kit for developing a web application with a minimal setup to get React + Typescript working in Vite with HMR and some linting rules..
+A starter kit for developing a web application with a minimal setup to get React + Typescript working in Vite with HMR and some linting rules.
 
 ## Get started
 
