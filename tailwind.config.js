@@ -9,8 +9,9 @@ export default {
       sans: [
         ['InterVariable', ...defaultTheme.fontFamily.sans],
         { fontFeatureSettings: '"cv11", "ss01"' },
-      ],
-      mono: [[...defaultTheme.fontFamily.mono]],
+      ], // Default font family, primary font for the entire page
+      mono: [[...defaultTheme.fontFamily.mono]], // Font family for code
+      inter: ['Inter', 'sans-serif'], // Secondary font family
     },
     extend: {},
   },

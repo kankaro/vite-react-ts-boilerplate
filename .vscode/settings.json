@@ -2,12 +2,12 @@
     "breadcrumbs.enabled": true,
     "css.validate": false,
     "editor.fontFamily": "Victor Mono, Dank Mono, Jetbrains Mono, Consolas, 'Courier New', monospace",
-    "editor.fontSize": 13,
+    "editor.fontSize": 13.5,
     "editor.fontLigatures": true,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
-    "editor.letterSpacing": 0.7,
+    "editor.letterSpacing": 0.75,
     "editor.lineHeight": 30,
     "editor.fontWeight": 400,
     "editor.minimap.enabled": false,
@@ -55,14 +55,21 @@
         "editor.formatOnSave": false,
         "editor.defaultFormatter": null
     },
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+
     "editor.codeActionsOnSave": {
+        "source.formatDocument": "explicit",
         "source.fixAll": "explicit",
         "source.fixAll.eslint": "explicit",
-        "source.organizeImports": "always"
+        "source.organizeImports": "always",
+        "source.fixAll.markdownlint": "always"
     },
     "editor.scrollbar.verticalScrollbarSize": 8,
-    "files.eol": "\n",
     "explorer.decorations.badges": false,
+    "files.eol": "\n",
 
     "files.insertFinalNewline": true,
     "files.associations": {
@@ -73,16 +80,5 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "typescript.tsdk": "node_modules/typescript/lib",
-    "workbench.colorTheme": "Palenight (Mild Contrast)",
-    "cSpell.words": [
-        "clsx",
-        "Commitlint",
-        "lintstagedrc",
-        "reduxjs",
-        "Stylelint",
-        "tailwindcss",
-        "tsup",
-        "Unpromisify",
-        "vitest"
-    ]
+    "workbench.colorTheme": "Palenight (Mild Contrast)"
 }
