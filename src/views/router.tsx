@@ -7,7 +7,7 @@ import { Welcome } from './welcome';
 
 /**
  * This is the route configuration of the main pages of the application.
- * Fill free to add or remove main routes here.
+ * Feel free to add or remove main routes here.
  */
 const pageRoutes: RouteObject[] = [
   {
